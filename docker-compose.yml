@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  devsu-app:
+    container_name: devsu-compose-app
+    image: dianaumanzr/devsu
+    restart: on-failure
+    ports:
+      - 10555:9091
