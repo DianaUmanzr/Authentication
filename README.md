@@ -5,8 +5,6 @@
 * [Technology stack](#markdown-header-technology-stack)
 * [URL](#markdown-header-how-to-test-the-software)
 * [Build and Installation](#markdown-header-build-and-installation)
-* [Configuration](#markdown-header-configuration)
-* [How to test the software](#markdown-header-how-to-test-the-software)
 
 
 ## Technology stack
@@ -17,13 +15,25 @@ Application is developed on Java 17 and Springboot 2.7.9
 * Java 17
 * Spring boot 2.7.9
 
-## Known issues
-Url application is: 
-
+## URL
 The application is deployed in Amazon Web Service using Fargate, ECS and Docker.
 
-http://3.143.3.228:9091/token
+First you need to get a token with this URL:
 
+POST - http://3.143.3.228:9091/token
+
+Basic Authorization in POSTMAN with these credentials.
+
+username: dumanzr
+password: password
+
+After when your token generated call this URL:
+
+POST - http://3.143.3.228:9091/DevOps
+
+Send a Bearer token in the Authorization and the header:
+
+X-Parse-REST-API-Key=2f5ae96c-b558-4c7b-a590-a501ae1c3f6c
 
 ## Build and Installation
 
@@ -63,29 +73,3 @@ The pod is running in port 30391
 
 Check the url, the ip is minikube ip and the port assigned in NodePort in the file devsu-svc.yml
 `http://192.168.49.2:30391/token`
-
-## How to test the software
-
-The Test are developed in Junit test. To run these you need Maven command line
-
-To run all Test case, you need run the following command
-
-```
-mvn test
-
-```
-
-Test by Class
-```
-mvn -Dtest="CLASS_TO_RUN" test
-
-```
-
-Test by Method
-```
-mvn test -Dtest="CLASS_TO_TEST#METHOD_TO_TEST"  
-
-```
-
-## Known issues
-N\A
