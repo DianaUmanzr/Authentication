@@ -77,5 +77,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>devsu-2.1.0-SNAPSHOT</finalName>
 	</build>
 </project>
